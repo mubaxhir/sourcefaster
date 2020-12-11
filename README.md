@@ -28,12 +28,14 @@ VALUES
 ```
 
 #### for starting please install the following libraries:
+```
 pip install Flask
 pip install shuttle 
 pip install PyVirtualDisplay
 pip install selenium
 pip install googletrans
 pip install tox
+```
 
 ###### for Running run command:
-*$ python app.py*
+$ *python app.py*
