@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" media="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<body>
+
+<h1 style="text-align:center;">S-GURU <a href="#">TASK</a></h1>
+    	<div class="box">
+            <br>
+        <form style="text-align:center;"  action="/login">
+            <input class="w3-button w3-yellow w3-border" style="text-align:center; color: black; font-size: 16px; border-radius: 12px;  margin: auto;" type="submit" value="Run Script" />
+        </form>
+        <br>
+        <form style="text-align:center;" action="/check" method="post">
+            <input type="text" name="lnumber" placeholder="Enter licence number ">
+            <br>
+            <br>
+            <input class="w3-button w3-yellow w3-border" style="text-align:center; color: black; font-size: 16px; border-radius: 12px;  margin: auto;" type="submit" value="Check" />
+        </form>
+
+        </div>
+
+
+</body>
+</html>

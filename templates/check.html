@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+
+<h1>
+    {{ name }}
+</h1>
+{%for i in Info%}
+    <h5>{{ i }}</h5>
+{%endfor%}
+
+<table id="customers">
+    {%for i in Table%}
+        <tr>
+            {%for j in i%}
+                <td>{{ j }}</td>
+            {%endfor%}
+        </tr>
+    {%endfor%}
+
+</table>
+
+</body>
+</html>

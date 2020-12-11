@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DashBoard</title>
+
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" media="all">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+</style>
+
+</head>
+<body>
+
+<h1 style="text-align:center;">S-GURU <a href="/">TASK</a></h1>
+    	<div class="box" style="width: 410px; height: 700px;">
+  			<h2> Alibaba Script</h2>
+			<form action="/run" method="post">
+    			{%if message%}
+				<div class="users" style="margin-left:20%">
+				  <h4>{{ message }}</h4>
+				</div>
+				{%endif%}
+                <label style="margin-left: 25%;margin-right:25%;">Alibaba Username</label><br>
+    			<input style="text-align:center; display: block; margin:auto;" type="text" name="username" id="username" placeholder="Username" required/>
+                <label style="margin-left: 25%;margin-right:25%;">Alibaba Password</label><br>
+    			<input style="text-align:center; display: block; margin:auto;" type="password" name="password" id="password" placeholder="Password" required/>
+                <br>
+    			<label  style="margin-left: 25%;margin-right:25%;">Url</label>
+                <input  style="text-align:center; display: block; margin:auto;" type="text" name="url" id="url" placeholder="Url" required/>
+    			<label style="margin-left: 70px">Templet1</label>
+                <textarea name="temp1" style="margin-left: 70px; width: 300px; height: 50px;" name="templet1"></textarea>
+                <label style="margin-left: 70px">Templet2</label>
+                <textarea name="temp2" style="margin-left: 70px;width: 300px; height: 50px;" name="templet2"></textarea>
+                <label style="margin-left: 70px">Templet3</label>
+                <textarea name="temp3" style="margin-left: 70px;width: 300px; height: 50px;" name="templet2"></textarea>
+
+                <label style="margin-left: 20px">Select you Want to resume or Start new Script:</label><br>
+                <input type="radio" id="pasue" name="Ask" value="0">
+                <label for="pasue">NewScript</label><br>
+                <input type="radio" id="resume" name="Ask" value="1">
+                <label for="pasue">Resume</label><br>
+                <input class="w3-button w3-yellow w3-border" type="submit" class="button" value="Run"/>
+  			</form>
+		</div>
+<h3>
+    login Successfully
+</h3>
+
+</body>
+</html>

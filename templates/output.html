@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" media="all">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+    <body>
+
+      <h1 style="text-align:center;">S-GURU <a href="#">TASK</a></h1>
+    	<div class="box" style='width: 410px; height: 1500px;'>
+  			<h4>Script iS runing output will be show depending on run time of script</h4>
+			<form action="/output" method="post">
+    			{%if message%}
+				<div class="users" style="margin-left:20%">
+				  <h4>{{ message }}</h4>
+				</div>
+				{%endif%}
+
+
+				{%if show%}
+				<div class="output" style="margin-left:20%">
+				  	{%for i in output%}
+    					<li>{{ i }}</li>
+					{%endfor%}
+				</div>
+				{%endif%}
+
+				<input class="w3-button w3-yellow w3-border" id ='myBtn' type="submit" class="button" value="Start"/>
+
+
+  			</form>
+	{%if timer%}
+			<h4 id="lable"></h4>
+			<div>Waiting Time Left = <span id="timer"></span></div>
+	<script>
+		document.getElementById('lable').innerHTML ='Button Is Disable !!'
+		document.getElementById("myBtn").disabled = true;
+						document.getElementById('timer').innerHTML =
+		  1 + ":" + 59;
+		startTimer();
+
+		function startTimer() {
+		  var presentTime = document.getElementById('timer').innerHTML;
+		  var timeArray = presentTime.split(/[:]+/);
+		  var m = timeArray[0];
+		  var s = checkSecond((timeArray[1] - 1));
+		  if(s==59){m=m-1}
+		  if(m<0){
+		  document.getElementById('lable').innerHTML ='Button Is Enable !!'
+		  document.getElementById("myBtn").disabled = false;
+		  document.setElementById('timer').innerHTML = 0 +":"+ 0;
+
+		  }
+
+		  document.getElementById('timer').innerHTML = m + ":" + s;
+		  console.log(m)
+		  setTimeout(startTimer, 1000);
+		}
+
+		function checkSecond(sec) {
+		  if (sec < 10 && sec >= 0) {sec = "0" + sec};
+		  if (sec < 0) {sec = "59"};
+		  return sec;
+		}
+	</script>
+	{%endif%}
+		</div>
+
+
+</body>
+</html>

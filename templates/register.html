@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" media="all">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+    <body>
+
+      <h1 style="text-align:center;">S-GURU <a href="/">TASK</a></h1>
+    	<div class="box">
+  			<h1>Register</h1>
+			<form action="/register" method="post">
+    			{%if message%}
+				<div class="users" style="margin-left:20%">
+				  <h4>{{ message }}</h4>
+				</div>
+				{%endif%}
+
+    			<input type="text" name="username" id="username" placeholder="Username" required/>
+    			<br>
+    			<input type="password" name="password" id="password" placeholder="Password" required/>
+    			<br>
+    			<input class="w3-button w3-yellow w3-border" type="submit" class="button" value="Register"/>
+  			</form>
+		</div>
+
+
+</body>
+</html>
